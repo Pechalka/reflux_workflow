@@ -1,16 +1,14 @@
-#todo list#
+#reflux workflow#
 
-[reactjs](http://facebook.github.io/react/index.html) (frontend)
+[reactjs](http://facebook.github.io/react/index.html) 
 
-[loopback](http://loopback.io/) (backend)
+[reflux](https://github.com/spoike/refluxjs) 
 
 ##how to run:##
 
-    cd server
     npm install
-    node create-test-data
-    node app
-    cd ../client
+    node server
+    cd public
     npm install
     gulp build
   
