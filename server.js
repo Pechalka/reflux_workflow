@@ -30,6 +30,10 @@ makeREST(app, '/api/pages', [
 ]);
 
 
+makeREST(app, '/api/todos', [
+	{ id : 22, title : 'learn reflux', completed : false }
+]);
+
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
 });

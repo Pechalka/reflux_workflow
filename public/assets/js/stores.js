@@ -14,5 +14,7 @@ module.exports = {
 	site : ObjectStore({ title : '---' }),
 	sites : CollectionStore(),
 
-	pages : CollectionStore()
+	pages : CollectionStore(),
+
+	todos : CollectionStore()
 }

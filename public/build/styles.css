@@ -16,3 +16,73 @@ body {
 	padding: 20px;
 }
 
+.todo-list {
+	padding: 20px;
+	width: 200px;	
+}
+
+.todo-list ul {
+	list-style: none;
+	padding-bottom: 20px;
+}
+
+.todo-list ul li {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+.todo-list ul li input[type=checkbox]{
+	margin-right: 5px;
+	vertical-align: middle;
+}
+.todo-list ul li label {
+	float: left;
+}
+
+.todo-list ul li a {
+	float: right;
+}
+.new-todo input {
+	width: 120px;
+}
+
+.new-todo {
+	position: relative;
+}
+.new-todo a {
+	position: absolute;
+	right: 0;
+}
+
+.completed {
+	text-decoration: line-through;
+}
+
+.btn {
+	text-decoration: none;
+	border: 1px solid #ccc;
+	padding: 3px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.btn:hover {
+	background-color: #F8F8F8;
+	text-decoration: underline;
+}
+
+.group:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+/*IE6*/
+* html.group {
+	height: 1%;
+}
+/*IE7*/
+*:first-child+html.group {
+	min-height: 1px;
+}

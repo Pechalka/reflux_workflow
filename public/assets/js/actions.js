@@ -17,13 +17,36 @@ var actions = Reflux.createActions([
     "addSite",
 
     "addPageToCurrentSite",
-    "removePage"
+    "removePage",
+
+    "fetchTodos",
+    "addTodo",
+    "removeTodo",
+    "toggleStatus"
 ]);
 
 
+actions.addTodo.listen(function(title){
+	http.post('/api/todos', { title : title, completed : false })
+		.done(stores.todos.add)
+})
+
+actions.fetchTodos.listen(function(){
+	http.get('/api/todos')
+		.done(stores.todos.set)
+})
+
+actions.toggleStatus.listen(function(todo){
+	todo.completed = !todo.completed;
+	http.put('/api/todos/' + todo.id, todo)
+		.done(stores.todos.update);
+})
 
 
-
+actions.removeTodo.listen(function(todo){
+	http.del('/api/todos/' + todo.id)
+		.done(stores.todos.remove)
+})
 
 
 actions.getUser.listen(function(id){

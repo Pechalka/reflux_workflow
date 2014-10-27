@@ -11,7 +11,7 @@ var NotFoundRoute = Router.NotFoundRoute;
 var UserList = require('./components/UserList');
 var UserForm = require('./components/UserForm');
 var ConstructorApp = require('./components/ConstructorApp');
-
+var TodoList = require('./components/TodoList')
 
 var App = React.createClass({
     render: function () {
@@ -25,7 +25,8 @@ var App = React.createClass({
 var routes = (<Route handler={App}>
 	<DefaultRoute handler={UserList}/>
 	<Route name="users" handler={UserList}/>
-	<Route name="users add" path="users/add" handler={UserForm}/>
+    <Route name="todos" handler={TodoList}/>
+    <Route name="users add" path="users/add" handler={UserForm}/>
 	<Route name="users edit" path="users/:id" handler={UserForm}/>
     <Route name="constructor app" path="users/:user_id/constructor" handler={ConstructorApp} />
 </Route>)
